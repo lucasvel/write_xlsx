@@ -259,7 +259,7 @@ module Writexlsx
     def substitute_cellref(cell, *args)       #:nodoc:
       return [*args] if cell.respond_to?(:coerce) # Numeric
 
-      cell.upcase!
+      cell = cell.upcase
 
       case cell
       # Convert a column range: 'A:A' or 'B:G'.
